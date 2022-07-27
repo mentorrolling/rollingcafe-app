@@ -38,13 +38,19 @@ const SignUp = () => {
       }
     }
 
+    setFormValues({
+      nombre: "",
+      email: "",
+      password: "",
+    });
+
     // console.log(respuesta);
   };
 
   return (
     <div className="container">
       <div className="row login-cuerpo">
-        <div className="col-12 col-md-8 offset-md-2">
+        <div className="col-12 col-md-6 offset-md-3">
           <div className="card">
             <div className="card-body">
               <h3 className="text-center mb-3">
@@ -59,6 +65,8 @@ const SignUp = () => {
                   name="nombre"
                   value={formValues.nombre}
                   onChange={handleChange}
+                  autoFocus={true}
+                  autoComplete="off"
                 />
                 <input
                   className="form-control mb-2"

@@ -29,7 +29,7 @@ const LoginScreen = () => {
   return (
     <div className="container">
       <div className="row login-cuerpo">
-        <div className="col-12 col-md-6 offset-md-3">
+        <div className="col-12 col-md-4 offset-md-4">
           <div className="card">
             <div className="card-body">
               <h3 className="text-center mb-3">
@@ -43,6 +43,7 @@ const LoginScreen = () => {
                   placeholder="Ingrese su email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  autoFocus={true}
                 />
                 <input
                   className="form-control"
