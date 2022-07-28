@@ -19,7 +19,13 @@ function App() {
   }, []);
 
   const inicioSesion = async () => {
-    const { token } = await login(usuario);
+    const { token } = await login(usuario); //usuario, token
+
+    // login(usuario).then(respuesta=>{
+    //   const {token}=respuesta
+    // return token
+    // })
+
     localStorage.setItem("token", JSON.stringify(token));
   };
 

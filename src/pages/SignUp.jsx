@@ -4,6 +4,7 @@ import { crearUsuario } from "../helpers/fetchUsuarios";
 
 const SignUp = () => {
   const navigate = useNavigate();
+
   const [formValues, setFormValues] = useState({
     nombre: "",
     email: "",
@@ -42,6 +43,7 @@ const SignUp = () => {
       nombre: "",
       email: "",
       password: "",
+      role: "USER_ROLE",
     });
 
     // console.log(respuesta);

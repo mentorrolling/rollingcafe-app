@@ -4,6 +4,7 @@ import { login } from "../helpers/fetchAuth";
 
 const LoginScreen = () => {
   const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState([]);
@@ -57,7 +58,7 @@ const LoginScreen = () => {
                 </div>
                 <div className="mb-3 text-center text-muted">
                   <small>
-                    Si no tenés cuenta podés registrarte{" "}
+                    Si no tenés cuenta podés registrarte
                     <Link to="/signup">aquí</Link>
                   </small>
                 </div>

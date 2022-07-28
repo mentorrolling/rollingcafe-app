@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { traerProductos } from "../helpers/fetchProductos";
+import BtnPagination from "../components/BtnPagination";
 
 const HomeScreen = () => {
   const [productos, setProductos] = useState([]);
@@ -19,6 +20,12 @@ const HomeScreen = () => {
   };
 
   const nextPag = () => {
+    //total 7
+    //registro 0
+    // 7
+    // total 7
+    //registro 5
+    //2
     if (total - registro >= 5) {
       setRegistro(registro + 5);
     }
@@ -43,7 +50,11 @@ const HomeScreen = () => {
           <div className="col" key={producto._id}>
             <div className="card h-100">
               <img
-                src="https://dam.cocinafacil.com.mx/wp-content/uploads/2021/04/licor-de-cafe-con-leche.jpg"
+                src={
+                  producto?.img
+                    ? producto.img
+                    : "https://dam.cocinafacil.com.mx/wp-content/uploads/2021/04/licor-de-cafe-con-leche.jpg"
+                }
                 className="card-img-top"
                 alt="cafe"
               />
@@ -69,12 +80,12 @@ const HomeScreen = () => {
       </div>
       <div className="row">
         <div className="col">
-          <button className="btn btn-primary me-2" onClick={prevPag}>
-            Prev
-          </button>
-          <button className="btn btn-primary" onClick={nextPag}>
-            Next
-          </button>
+          <BtnPagination
+            registro={registro}
+            total={total}
+            prevPag={prevPag}
+            nextPag={nextPag}
+          />
         </div>
       </div>
     </div>
